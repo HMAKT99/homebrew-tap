@@ -5,17 +5,15 @@ class AgasthyCli < Formula
   license "Apache-2.0"
 
   on_macos do
-    on_arm do
-      url "https://github.com/HMAKT99/Agasthy/releases/download/v0.1.5/agasthy-cli-macos-aarch64.tar.gz"
-      sha256 "b570e1a397ad70ef7b51afdb81916ce4c6dd62af855b9ca6959b539f8dd08aac"
-    end
+    url "https://github.com/HMAKT99/Agasthy/releases/download/v0.1.5/agasthy-cli-macos-aarch64.tar.gz"
+    sha256 "b570e1a397ad70ef7b51afdb81916ce4c6dd62af855b9ca6959b539f8dd08aac"
+    depends_on arch: :arm64
   end
 
   on_linux do
-    on_intel do
-      url "https://github.com/HMAKT99/Agasthy/releases/download/v0.1.5/agasthy-cli-linux-x86_64.tar.gz"
-      sha256 "0180202b6ddfdf7689f01d57e0ba2ef01de35783fbaed3782fe3701fa23578f7"
-    end
+    url "https://github.com/HMAKT99/Agasthy/releases/download/v0.1.5/agasthy-cli-linux-x86_64.tar.gz"
+    sha256 "0180202b6ddfdf7689f01d57e0ba2ef01de35783fbaed3782fe3701fa23578f7"
+    depends_on arch: :x86_64
   end
 
   def install

@@ -1,0 +1,58 @@
+name: Test
+
+# Installs the cask and formula for real on Apple silicon and Linux, on every
+# change and weekly (to catch broken download links).
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 6 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  macos:
+    name: macOS (Apple silicon)
+    runs-on: macos-latest
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: "1"
+      HOMEBREW_NO_INSTALL_FROM_API: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tap this repository
+        run: |
+          brew tap hmakt99/tap "$GITHUB_WORKSPACE"
+          brew trust hmakt99/tap 2>/dev/null || true
+      - run: brew style hmakt99/tap
+      - run: brew audit --strict --online --formula hmakt99/tap/agasthy-cli
+      - run: brew audit --strict --online --cask hmakt99/tap/agasthy
+      - name: Install and test the CLI
+        run: |
+          brew install hmakt99/tap/agasthy-cli
+          brew test hmakt99/tap/agasthy-cli
+          agasthy --version
+      - name: Install the app
+        run: |
+          brew install --cask hmakt99/tap/agasthy
+          test -d /Applications/AGASTHY.app
+          codesign --verify --deep --strict /Applications/AGASTHY.app
+          brew uninstall --cask hmakt99/tap/agasthy
+          test ! -d /Applications/AGASTHY.app
+
+  linux:
+    name: Linux (x64)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Homebrew/actions/setup-homebrew@main
+      - name: Install and test the CLI
+        env:
+          HOMEBREW_NO_AUTO_UPDATE: "1"
+        run: |
+          brew tap hmakt99/tap "$GITHUB_WORKSPACE"
+          brew trust hmakt99/tap 2>/dev/null || true
+          brew install hmakt99/tap/agasthy-cli
+          brew test hmakt99/tap/agasthy-cli
+          agasthy --version
