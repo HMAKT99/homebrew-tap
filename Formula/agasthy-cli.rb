@@ -1,7 +1,6 @@
 class AgasthyCli < Formula
   desc "Read-only CLI and MCP server for AGASTHY developer machine intelligence"
   homepage "https://github.com/HMAKT99/Agasthy"
-  version "0.1.5"
   license "Apache-2.0"
 
   on_macos do
