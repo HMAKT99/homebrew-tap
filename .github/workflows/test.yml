@@ -18,13 +18,10 @@ jobs:
     runs-on: macos-latest
     env:
       HOMEBREW_NO_AUTO_UPDATE: "1"
-      HOMEBREW_NO_INSTALL_FROM_API: "1"
     steps:
-      - uses: actions/checkout@v4
-      - name: Tap this repository
-        run: |
-          brew tap hmakt99/tap "$GITHUB_WORKSPACE"
-          brew trust hmakt99/tap 2>/dev/null || true
+      # Taps this repository as hmakt99/tap.
+      - uses: Homebrew/actions/setup-homebrew@main
+      - run: brew trust hmakt99/tap 2>/dev/null || true
       - run: brew style hmakt99/tap
       - run: brew audit --strict --online --formula hmakt99/tap/agasthy-cli
       - run: brew audit --strict --online --cask hmakt99/tap/agasthy
@@ -45,13 +42,12 @@ jobs:
     name: Linux (x64)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      # Taps this repository as hmakt99/tap.
       - uses: Homebrew/actions/setup-homebrew@main
       - name: Install and test the CLI
         env:
           HOMEBREW_NO_AUTO_UPDATE: "1"
         run: |
-          brew tap hmakt99/tap "$GITHUB_WORKSPACE"
           brew trust hmakt99/tap 2>/dev/null || true
           brew install hmakt99/tap/agasthy-cli
           brew test hmakt99/tap/agasthy-cli
