@@ -1,6 +1,6 @@
 cask "agasthy" do
-  version "0.1.6"
-  sha256 "c020247b54182a2200f895ba9a818170c215ba0e6945d19f5fa3f29f63d6415f"
+  version "0.1.7"
+  sha256 "e1fc3c97bf58f2c6680261508ac148044a0cd8ccfc586cf2a6ba0c4de1100a6d"
 
   url "https://github.com/HMAKT99/Agasthy/releases/download/v#{version}/AGASTHY-#{version}-apple-silicon.dmg"
   name "AGASTHY"

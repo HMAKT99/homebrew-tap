@@ -7,8 +7,8 @@ class AgasthyCli < Formula
     depends_on arch: :arm64
 
     on_arm do
-      url "https://github.com/HMAKT99/Agasthy/releases/download/v0.1.6/agasthy-cli-macos-aarch64.tar.gz"
-      sha256 "54db3f4e3eaf42a2a1f94c5d74a63b2b4e5b3d289efa2d15f31f7206b3fa6785"
+      url "https://github.com/HMAKT99/Agasthy/releases/download/v0.1.7/agasthy-cli-macos-aarch64.tar.gz"
+      sha256 "37c14018418eb258e6749b2fd9c186398b241c8f615bac2f769e1b77590e94b0"
     end
   end
 
@@ -16,8 +16,8 @@ class AgasthyCli < Formula
     depends_on arch: :x86_64
 
     on_intel do
-      url "https://github.com/HMAKT99/Agasthy/releases/download/v0.1.6/agasthy-cli-linux-x86_64.tar.gz"
-      sha256 "78a4a9854306f7c1dadbf4f3cdbeaa5b65aff9e0baecd6ecb929d9d6df334704"
+      url "https://github.com/HMAKT99/Agasthy/releases/download/v0.1.7/agasthy-cli-linux-x86_64.tar.gz"
+      sha256 "6fa4a9e2c1b56f8567468d23110fccd2d9a144810beb567dc008c812edf4d25c"
     end
   end
 
