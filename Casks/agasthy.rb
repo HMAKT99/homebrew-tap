@@ -17,14 +17,6 @@ cask "agasthy" do
 
   app "AGASTHY.app"
 
-  caveats <<~EOS
-    AGASTHY is not notarized by Apple yet, so the first launch shows
-    "Apple could not verify AGASTHY". Click Done, then open
-    System Settings > Privacy & Security and click Open Anyway (once).
-    Or install without the prompt:
-      curl -fsSL https://raw.githubusercontent.com/HMAKT99/Agasthy/main/install.sh | sh
-  EOS
-
   zap trash: [
     "~/Library/Application Support/org.agasthy.desktop",
     "~/Library/Caches/org.agasthy.desktop",
@@ -32,4 +24,12 @@ cask "agasthy" do
     "~/Library/Saved Application State/org.agasthy.desktop.savedState",
     "~/Library/WebKit/org.agasthy.desktop",
   ]
+
+  caveats <<~EOS
+    AGASTHY is not notarized by Apple yet, so the first launch shows
+    "Apple could not verify AGASTHY". Click Done, then open
+    System Settings > Privacy & Security and click Open Anyway (once).
+    Or install without the prompt:
+      curl -fsSL https://raw.githubusercontent.com/HMAKT99/Agasthy/main/install.sh | sh
+  EOS
 end

@@ -4,8 +4,15 @@ class AgasthyCli < Formula
   license "Apache-2.0"
 
   on_macos do
-    url "https://github.com/HMAKT99/Agasthy/releases/download/v0.1.10/agasthy-cli-macos-universal.tar.gz"
-    sha256 "88ad38a9cbd0baa03aa7f643eb581f76ad01dec167dea35ee034d953c509ba87"
+    on_arm do
+      url "https://github.com/HMAKT99/Agasthy/releases/download/v0.1.10/agasthy-cli-macos-universal.tar.gz"
+      sha256 "88ad38a9cbd0baa03aa7f643eb581f76ad01dec167dea35ee034d953c509ba87"
+    end
+
+    on_intel do
+      url "https://github.com/HMAKT99/Agasthy/releases/download/v0.1.10/agasthy-cli-macos-universal.tar.gz"
+      sha256 "88ad38a9cbd0baa03aa7f643eb581f76ad01dec167dea35ee034d953c509ba87"
+    end
   end
 
   on_linux do
