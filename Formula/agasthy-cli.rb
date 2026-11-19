@@ -4,19 +4,19 @@ class AgasthyCli < Formula
   license "Apache-2.0"
 
   on_macos do
-    url "https://github.com/HMAKT99/Agasthy/releases/download/v0.1.9/agasthy-cli-macos-universal.tar.gz"
-    sha256 "34bc12ad5ba783dc84531996e98f34f0d47eddb9aecf60b611b5351ea34b9e3f"
+    url "https://github.com/HMAKT99/Agasthy/releases/download/v0.1.10/agasthy-cli-macos-universal.tar.gz"
+    sha256 "88ad38a9cbd0baa03aa7f643eb581f76ad01dec167dea35ee034d953c509ba87"
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/HMAKT99/Agasthy/releases/download/v0.1.9/agasthy-cli-linux-x86_64.tar.gz"
-      sha256 "4627c743265a94a8a3da0a025c247475a632bc5444d1b24bb217effd5ef35ed5"
+      url "https://github.com/HMAKT99/Agasthy/releases/download/v0.1.10/agasthy-cli-linux-x86_64.tar.gz"
+      sha256 "44d6a7b8afa09c20b24e8fe3d2d04066ee5a198b7c30c794cef822a5d91c4d7c"
     end
 
     on_arm do
-      url "https://github.com/HMAKT99/Agasthy/releases/download/v0.1.9/agasthy-cli-linux-aarch64.tar.gz"
-      sha256 "69fb11ae96ef97d127011c016e00d4b21cd55bf56cb88a5344703d62dc895eaa"
+      url "https://github.com/HMAKT99/Agasthy/releases/download/v0.1.10/agasthy-cli-linux-aarch64.tar.gz"
+      sha256 "f11c73a3878656c2c4f799319ebc059d4e12c641b3a69d066d17a12cc4879880"
     end
   end
 
