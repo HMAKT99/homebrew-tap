@@ -1,6 +1,6 @@
 cask "agasthy" do
-  version "0.1.10"
-  sha256 "bcf3ff3b8788d0593f7aff8108b75c7739149b7eeda41002b2aa2cd80d5dae56"
+  version "0.1.11"
+  sha256 "180dc485cdc8498a034ec6d15a2f0473234b69c9f569ec28e087f32fa9505769"
 
   url "https://github.com/HMAKT99/Agasthy/releases/download/v#{version}/AGASTHY-#{version}-macos-universal.dmg"
   name "AGASTHY"
